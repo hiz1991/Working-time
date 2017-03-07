@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310763D316D1A87CFD675036 /* Pods_WorkingWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47107189C956E8314F3FA120 /* Pods_WorkingWidget.framework */; };
 		5207D8C31CCE69B0007DF1E8 /* America.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5207D8C21CCE69B0007DF1E8 /* America.gpx */; };
 		5207D8C51CCEB879007DF1E8 /* RegionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207D8C41CCEB879007DF1E8 /* RegionProtocol.swift */; };
 		5207D8C71CCEB985007DF1E8 /* RegionDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5207D8C61CCEB985007DF1E8 /* RegionDelegateProtocol.swift */; };
@@ -22,10 +23,42 @@
 		FA56C8CC1E6C7F3D0032A110 /* DownloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56C8CA1E6C7F3D0032A110 /* DownloadButton.swift */; };
 		FA56C8CD1E6C7F3D0032A110 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56C8CB1E6C7F3D0032A110 /* ProgressView.swift */; };
 		FA56C8D01E6C82F60032A110 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56C8CF1E6C82F60032A110 /* FBHelper.swift */; };
+		FA56C8D71E6F33E10032A110 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA56C8D61E6F33E10032A110 /* NotificationCenter.framework */; };
+		FA56C8DA1E6F33E10032A110 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56C8D91E6F33E10032A110 /* TodayViewController.swift */; };
+		FA56C8DD1E6F33E10032A110 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56C8DB1E6F33E10032A110 /* MainInterface.storyboard */; };
+		FA56C8E11E6F33E10032A110 /* WorkingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FA56C8D51E6F33E10032A110 /* WorkingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA56C8E71E6F36700032A110 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56C8E61E6F36700032A110 /* ProgressView.swift */; };
+		FA56C8E91E6F381C0032A110 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA56C8E81E6F381C0032A110 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FA56C8DF1E6F33E10032A110 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 525EF2DD1CCB473000373B01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA56C8D41E6F33E10032A110;
+			remoteInfo = WorkingWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA56C8E51E6F33E10032A110 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA56C8E11E6F33E10032A110 /* WorkingWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		03E765E64E943170F0114206 /* Pods-WorkingWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkingWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkingWidget/Pods-WorkingWidget.release.xcconfig"; sourceTree = "<group>"; };
 		405861A9C38018AB8D0512E2 /* Pods-GeoTargeting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoTargeting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoTargeting/Pods-GeoTargeting.debug.xcconfig"; sourceTree = "<group>"; };
+		47107189C956E8314F3FA120 /* Pods_WorkingWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkingWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5207D8C21CCE69B0007DF1E8 /* America.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = America.gpx; sourceTree = "<group>"; };
 		5207D8C41CCEB879007DF1E8 /* RegionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionProtocol.swift; sourceTree = "<group>"; };
 		5207D8C61CCEB985007DF1E8 /* RegionDelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionDelegateProtocol.swift; sourceTree = "<group>"; };
@@ -37,6 +70,7 @@
 		525EF2F21CCB473000373B01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		525EF2F41CCB473000373B01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B067ADFC074E167A2C475DE /* Pods-GeoTargeting.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoTargeting.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeoTargeting/Pods-GeoTargeting.release.xcconfig"; sourceTree = "<group>"; };
+		8F1E32681FF26445E76936DC /* Pods-WorkingWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkingWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkingWidget/Pods-WorkingWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		C5A9458CA47428D4CD75B420 /* Pods_GeoTargeting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoTargeting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2DD4C81E64E9F90026B6DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA56C8C61E6C52D00032A110 /* TableContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableContainerView.swift; sourceTree = "<group>"; };
@@ -44,6 +78,13 @@
 		FA56C8CA1E6C7F3D0032A110 /* DownloadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadButton.swift; sourceTree = "<group>"; };
 		FA56C8CB1E6C7F3D0032A110 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		FA56C8CF1E6C82F60032A110 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
+		FA56C8D51E6F33E10032A110 /* WorkingWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WorkingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA56C8D61E6F33E10032A110 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FA56C8D91E6F33E10032A110 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FA56C8DC1E6F33E10032A110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FA56C8DE1E6F33E10032A110 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA56C8E61E6F36700032A110 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		FA56C8E81E6F381C0032A110 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +96,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA56C8D21E6F33E10032A110 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56C8D71E6F33E10032A110 /* NotificationCenter.framework in Frameworks */,
+				310763D316D1A87CFD675036 /* Pods_WorkingWidget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +113,8 @@
 			children = (
 				405861A9C38018AB8D0512E2 /* Pods-GeoTargeting.debug.xcconfig */,
 				8B067ADFC074E167A2C475DE /* Pods-GeoTargeting.release.xcconfig */,
+				8F1E32681FF26445E76936DC /* Pods-WorkingWidget.debug.xcconfig */,
+				03E765E64E943170F0114206 /* Pods-WorkingWidget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -71,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				525EF2E71CCB473000373B01 /* GeoTargeting */,
+				FA56C8D81E6F33E10032A110 /* WorkingWidget */,
 				525EF2E61CCB473000373B01 /* Products */,
 				13FFC8E9CDED5864F765E623 /* Pods */,
 				91636A77329731C976469594 /* Frameworks */,
@@ -81,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				525EF2E51CCB473000373B01 /* GeoTargeting.app */,
+				FA56C8D51E6F33E10032A110 /* WorkingWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				C5A9458CA47428D4CD75B420 /* Pods_GeoTargeting.framework */,
+				FA56C8D61E6F33E10032A110 /* NotificationCenter.framework */,
+				47107189C956E8314F3FA120 /* Pods_WorkingWidget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +177,18 @@
 				FA56C8CB1E6C7F3D0032A110 /* ProgressView.swift */,
 			);
 			name = customViews;
+			sourceTree = "<group>";
+		};
+		FA56C8D81E6F33E10032A110 /* WorkingWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FA56C8E81E6F381C0032A110 /* GoogleService-Info.plist */,
+				FA56C8E61E6F36700032A110 /* ProgressView.swift */,
+				FA56C8D91E6F33E10032A110 /* TodayViewController.swift */,
+				FA56C8DB1E6F33E10032A110 /* MainInterface.storyboard */,
+				FA56C8DE1E6F33E10032A110 /* Info.plist */,
+			);
+			path = WorkingWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,15 +204,36 @@
 				525EF2E31CCB473000373B01 /* Resources */,
 				C67DEB2C9B1294471B500997 /* [CP] Embed Pods Frameworks */,
 				854ED40729BD6D2951F5DE3E /* [CP] Copy Pods Resources */,
+				FA56C8E51E6F33E10032A110 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FA56C8E01E6F33E10032A110 /* PBXTargetDependency */,
 			);
 			name = GeoTargeting;
 			productName = GeoTargeting;
 			productReference = 525EF2E51CCB473000373B01 /* GeoTargeting.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FA56C8D41E6F33E10032A110 /* WorkingWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA56C8E41E6F33E10032A110 /* Build configuration list for PBXNativeTarget "WorkingWidget" */;
+			buildPhases = (
+				DE121B3AB090EBBA75C02BD8 /* [CP] Check Pods Manifest.lock */,
+				FA56C8D11E6F33E10032A110 /* Sources */,
+				FA56C8D21E6F33E10032A110 /* Frameworks */,
+				FA56C8D31E6F33E10032A110 /* Resources */,
+				D2CE0C985EC12F2202BF59E9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorkingWidget;
+			productName = WorkingWidget;
+			productReference = FA56C8D51E6F33E10032A110 /* WorkingWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -152,7 +241,7 @@
 		525EF2DD1CCB473000373B01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Evgenii Trapeznikov";
 				TargetAttributes = {
@@ -160,6 +249,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = N5S3VD452S;
 						LastSwiftMigration = 0820;
+					};
+					FA56C8D41E6F33E10032A110 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = N5S3VD452S;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -177,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				525EF2E41CCB473000373B01 /* GeoTargeting */,
+				FA56C8D41E6F33E10032A110 /* WorkingWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +286,15 @@
 				525EF2F01CCB473000373B01 /* Assets.xcassets in Resources */,
 				5207D8C31CCE69B0007DF1E8 /* America.gpx in Resources */,
 				525EF2EE1CCB473000373B01 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56C8D31E6F33E10032A110 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56C8DD1E6F33E10032A110 /* MainInterface.storyboard in Resources */,
+				FA56C8E91E6F381C0032A110 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +346,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		D2CE0C985EC12F2202BF59E9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WorkingWidget/Pods-WorkingWidget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE121B3AB090EBBA75C02BD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -261,7 +395,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA56C8D11E6F33E10032A110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56C8DA1E6F33E10032A110 /* TodayViewController.swift in Sources */,
+				FA56C8E71E6F36700032A110 /* ProgressView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA56C8E01E6F33E10032A110 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA56C8D41E6F33E10032A110 /* WorkingWidget */;
+			targetProxy = FA56C8DF1E6F33E10032A110 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		525EF2EC1CCB473000373B01 /* Main.storyboard */ = {
@@ -278,6 +429,14 @@
 				525EF2F21CCB473000373B01 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA56C8DB1E6F33E10032A110 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA56C8DC1E6F33E10032A110 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -375,7 +534,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 405861A9C38018AB8D0512E2 /* Pods-GeoTargeting.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = N5S3VD452S;
 				INFOPLIST_FILE = GeoTargeting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -389,12 +549,46 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B067ADFC074E167A2C475DE /* Pods-GeoTargeting.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = N5S3VD452S;
 				INFOPLIST_FILE = GeoTargeting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zmi.dilax.Khizir2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FA56C8E21E6F33E10032A110 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F1E32681FF26445E76936DC /* Pods-WorkingWidget.debug.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = N5S3VD452S;
+				INFOPLIST_FILE = WorkingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zmi.dilax.Khizir2.WorkingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FA56C8E31E6F33E10032A110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03E765E64E943170F0114206 /* Pods-WorkingWidget.release.xcconfig */;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = N5S3VD452S;
+				INFOPLIST_FILE = WorkingWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zmi.dilax.Khizir2.WorkingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -416,6 +610,15 @@
 			buildConfigurations = (
 				525EF2F81CCB473000373B01 /* Debug */,
 				525EF2F91CCB473000373B01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA56C8E41E6F33E10032A110 /* Build configuration list for PBXNativeTarget "WorkingWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA56C8E21E6F33E10032A110 /* Debug */,
+				FA56C8E31E6F33E10032A110 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

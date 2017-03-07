@@ -8,14 +8,32 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 	var window: UIWindow?
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        if #available(iOS 10.0, *) {
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+                // Enable or disable features based on authorization.
+                if((error == nil)) {
+                    print("Request authorization failed!")
+                } else {
+                    print("Request authorization succeeded!")
+//                    self.showAlert()
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+
+        
         FIRApp.configure()
 		// Override point for customization after application launch.
 		return true

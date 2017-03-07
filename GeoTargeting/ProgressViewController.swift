@@ -8,11 +8,8 @@
 
 import Foundation
 import Firebase
-//  ViewController.swift
-//  ZDT-DownloadVideo
-//
-//  Created by Sztanyi Szabolcs on 11/04/15.
-//  Copyright (c) 2015 Sztanyi Szabolcs. All rights reserved.
+import UserNotificationsUI
+import UserNotifications
 //
 
 import UIKit
@@ -84,6 +81,10 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
         downloadTask!.cancel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        readDataFromFB()
+    }
     // MARK: view methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +127,33 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
         progressView.animateProgressViewToProgress(Float(finalRes))
         progressView.updateProgressViewLabelWithProgress(Float(finalRes)*10)
         progressView.updateProgressViewWith(Float(finalRes), totalFileSize: Float(10.0))
+        
+        if finalRes > 0.97 {
+            notify(text: "You are working nearly 10 hours")
+        }
+        
+    }
+    
+    func notify(text:String){
+        print("arrived")
+        
+//        appendData(data:getDate(), type:type)
+        
+        if #available(iOS 10.0, *) {
+            let content = UNMutableNotificationContent()
+            content.title = NSString.localizedUserNotificationString(forKey: "Hello!", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: text, arguments: nil)
+            content.sound = UNNotificationSound.default()
+            content.categoryIdentifier = "notify-test"
+            
+            let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest.init(identifier: "notify-test", content: content, trigger: trigger)
+            
+            let center = UNUserNotificationCenter.current()
+            center.add(request)
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
     

@@ -43,7 +43,7 @@ class TableContainerView: UIViewController, UITableViewDelegate, UITableViewData
     
     func readDataFromFB(){
         var res:[NSDictionary]=[]
-        let ref = FIRDatabase.database().reference().child("putcygov").child("Recs")
+        let ref = FIRDatabase.database().reference().child("putcygov").child("Recs").queryLimited(toLast: 10)
         ref.observeSingleEvent(of: .value, with: { snapshot in
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 //                print(rest.value!)
@@ -84,7 +84,8 @@ class TableContainerView: UIViewController, UITableViewDelegate, UITableViewData
         
         // set the text from the data model
 //        print(type(of: self.recs[indexPath.row]["time"]! as! NSDate) )
-        let dstr:String = getDate(nsdate: self.recs[indexPath.row]["time"]! as! NSDate)
+        let dstrraw:String = getDate(nsdate: self.recs[indexPath.row]["time"]! as! NSDate)
+        let dstr:String = NSString.convertFormatOfDate(date: dstrraw, originalFormat: "yyyy-MM-dd HH:mm:ss ZZZ", destinationFormat: "EEEE dd MMMM, HH:mm")
         cell.textLabel?.text = dstr
         let position:String = self.recs[indexPath.row]["type"]! as! String
         if position == "leave" {
@@ -101,5 +102,28 @@ class TableContainerView: UIViewController, UITableViewDelegate, UITableViewData
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+    }
+}
+
+extension NSString {
+    
+    class func convertFormatOfDate(date: String, originalFormat: String, destinationFormat: String) -> String! {
+        
+        // Orginal format :
+        let dateOriginalFormat = DateFormatter()
+        dateOriginalFormat.dateFormat = originalFormat      // in the example it'll take "yy MM dd" (from our call)
+        
+        // Destination format :
+        let dateDestinationFormat = DateFormatter()
+        dateDestinationFormat.dateFormat = destinationFormat // in the example it'll take "EEEE dd MMMM yyyy" (from our call)
+        
+        // Convert current String Date to NSDate
+        let dateFromString = dateOriginalFormat.date(from: date)
+        
+        // Convert new NSDate created above to String with the good format
+        let dateFormated = dateDestinationFormat.string(from: dateFromString!)
+        
+        return dateFormated
+        
     }
 }

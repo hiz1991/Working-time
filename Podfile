@@ -4,3 +4,8 @@ target 'GeoTargeting' do
    use_frameworks!
    pod 'Firebase/Database'
 end
+
+target 'WorkingWidget' do
+    use_frameworks!
+    pod 'Firebase/Database'
+end
