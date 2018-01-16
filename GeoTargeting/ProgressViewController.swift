@@ -121,17 +121,28 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
         }
         print(lastEnter.timeIntervalSinceNow)
         
-        let res = diff/60
-        let finalRes = abs(res/Double(maxTimeMins))
+        let resVal = diff/60
+        let finalRes = abs(resVal/Double(maxTimeMins))
         print(finalRes)
         progressView.animateProgressViewToProgress(Float(finalRes))
         progressView.updateProgressViewLabelWithProgress(Float(finalRes)*10)
         progressView.updateProgressViewWith(Float(finalRes), totalFileSize: Float(10.0))
+        progressView.updateTotalForDay(getTotalForDay(res: res))
         
         if finalRes > 0.97 {
             notify(text: "You are working nearly 10 hours")
         }
         
+    }
+    
+    func getTotalForDay(res:[AnyObject])->Float{
+        var iter = 1;
+        var lastEnter:Date = res[res.count-iter]["time"] as! Date
+        var prevEnter:Date = res[res.count-iter-1]["time"] as! Date
+        while(lastEnter.isToday() && prevEnter.isToday()){
+            
+        }
+        return 0.0
     }
     
     func notify(text:String){
@@ -179,4 +190,12 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
 //            self.tableView.reloadData()
         })
     }
+}
+
+extension Date {
+    
+    func isToday() -> Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+    
 }

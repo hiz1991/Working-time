@@ -16,6 +16,7 @@ class ProgressView: UIView {
     
     fileprivate var progressLabel: UILabel = UILabel()
     fileprivate var sizeProgressLabel : UILabel = UILabel()
+    fileprivate var lastCheckingData :UILabel = UILabel()
     
     // layer to show the dashed circle layer
     fileprivate var dashedLayer: CAShapeLayer = CAShapeLayer()
@@ -59,6 +60,18 @@ class ProgressView: UIView {
         // add constraints
         addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: sizeProgressLabel, attribute: .centerX, multiplier: 1.0, constant: 0.0))
         addConstraint(NSLayoutConstraint(item: progressLabel, attribute: .bottom, relatedBy: .equal, toItem: sizeProgressLabel, attribute: .top, multiplier: 1.0, constant: -10.0))
+        
+        // label to show the already downloaded size and the total size of the file
+        lastCheckingData = UILabel()
+        lastCheckingData.textColor = .white
+        lastCheckingData.textAlignment = .center
+        lastCheckingData.text = "0.0 MB / 0.0 MB"
+        lastCheckingData.font = UIFont(name: "HelveticaNeue-Light", size: 10.0)
+        lastCheckingData.translatesAutoresizingMaskIntoConstraints=false
+        addSubview(lastCheckingData)
+        // add constraints
+        addConstraint(NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: lastCheckingData, attribute: .centerX, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: progressLabel, attribute: .bottom, relatedBy: .equal, toItem: lastCheckingData, attribute: .top, multiplier: 1.0, constant: -30.0))
     }
     
     fileprivate func createProgressLayer() {
@@ -96,12 +109,16 @@ class ProgressView: UIView {
     }
     
     func updateProgressViewLabelWithProgress(_ percent: Float) {
-        progressLabel.text = NSString(format: "%.2f %@", percent, unit) as String
+        lastCheckingData.text = NSString(format: "%.2f %@", percent, unit) as String
     }
     
     func updateProgressViewWith(_ totalSent: Float, totalFileSize: Float) {
 //        sizeProgressLabel.text = NSString(format: "%.1f MB / %.1f MB", convertFileSizeToMegabyte(totalSent), convertFileSizeToMegabyte(totalFileSize)) as String
          sizeProgressLabel.text = NSString(format: "%.2f \(unit) / %.2f \(unit)" as NSString, totalSent, totalFileSize) as String
+    }
+    
+    func updateTotalForDay(_ percent: Float){
+        progressLabel.text = NSString(format: "%.2f %@", percent, unit) as String
     }
     
     fileprivate func convertFileSizeToMegabyte(_ size: Float) -> Float {
