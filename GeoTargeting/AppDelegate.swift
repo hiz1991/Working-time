@@ -9,12 +9,14 @@
 import UIKit
 import Firebase
 import UserNotifications
+import ReachabilitySwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 	var window: UIWindow?
-
+//    let reachability = Reachability();
+     private var reachability:Reachability!;
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -36,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         FIRApp.configure()
 		// Override point for customization after application launch.
+        
+//        NotificationCenter.default.addObserver(self, selector:Selector(("checkForReachability:")), name: NSNotification.Name.reachabilityChanged, object: nil)
+//        let reachability: Reachability = Reachability.forInternetConnection()
+//        reachability.startNotifier()
+        
 		return true
 	}
 
@@ -61,6 +68,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
+//    func checkForReachability(notification:NSNotification)
+//    {
+//        // Remove the next two lines of code. You cannot instantiate the object
+//        // you want to receive notifications from inside of the notification
+//        // handler that is meant for the notifications it emits.
+//
+//        //var networkReachability = Reachability.reachabilityForInternetConnection()
+//        //networkReachability.startNotifier()
+//
+//        let networkReachability = notification.object as Reachability;
+//        var remoteHostStatus = networkReachability.currentReachabilityStatus()
+//
+//        if (remoteHostStatus.value == NotReachable.value)
+//        {
+//            println("Not Reachable")
+//        }
+//        else if (remoteHostStatus.value == ReachableViaWiFi.value)
+//        {
+//            println("Reachable via Wifi")
+//        }
+//        else
+//        {
+//            println("Reachable")
+//        }
+//    }
 
 }
 

@@ -35,7 +35,7 @@ class TableContainerView: UIViewController, UITableViewDelegate, UITableViewData
         } // not required when using UITableViewController
     }
     
-    func refresh(sender:AnyObject) {
+    @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         readDataFromFB()
         refreshControl.endRefreshing()

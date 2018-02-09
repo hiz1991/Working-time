@@ -62,8 +62,8 @@ class ProgressView: UIView {
     }
     
     fileprivate func createProgressLayer() {
-        let startAngle = CGFloat(M_PI_2)
-        let endAngle = CGFloat(M_PI * 2 + M_PI_2)
+        let startAngle = CGFloat(Double.pi/2)
+        let endAngle = CGFloat(Double.pi * 2 + Double.pi/2)
         let centerPoint = CGPoint(x: frame.width/2 , y: frame.height/2)
         
         progressLayer.path = UIBezierPath(arcCenter:centerPoint, radius: frame.width/2 - 10.0, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath

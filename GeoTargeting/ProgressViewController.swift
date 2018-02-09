@@ -136,9 +136,9 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
     }
     
     func getTotalForDay(res:[AnyObject])->Float{
-        var iter = 1;
-        var lastEnter:Date = res[res.count-iter]["time"] as! Date
-        var prevEnter:Date = res[res.count-iter-1]["time"] as! Date
+        let iter = 1;
+        let lastEnter:Date = res[res.count-iter]["time"] as! Date
+        let prevEnter:Date = res[res.count-iter-1]["time"] as! Date
         while(lastEnter.isToday() && prevEnter.isToday()){
             
         }
@@ -172,7 +172,7 @@ class ProgressViewController: UIViewController, URLSessionDownloadDelegate {
         return .lightContent
     }
     
-    func readDataFromFB(){
+    @objc func readDataFromFB(){
         var res:[NSDictionary]=[]
         let ref = FIRDatabase.database().reference().child("putcygov").child("Recs")
         ref.observeSingleEvent(of: .value, with: { snapshot in

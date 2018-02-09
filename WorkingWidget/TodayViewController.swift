@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         addGradientBackgroundLayer()
         print(calcTimeProgress)
         //        progressView.animateProgressViewToProgress(calcTimeProgress)
-        var timer = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(self.readDataFromFB), userInfo: nil, repeats: true);
+        var _ = Timer.scheduledTimer(timeInterval: 300, target: self, selector: #selector(self.readDataFromFB), userInfo: nil, repeats: true);
         readDataFromFB()
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         // Do any additional setup after loading the view from its nib.
@@ -83,7 +83,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    func readDataFromFB(){
+    @objc func readDataFromFB(){
         var res:[NSDictionary]=[]
         let ref = FIRDatabase.database().reference().child("putcygov").child("Recs")
         ref.observeSingleEvent(of: .value, with: { snapshot in
